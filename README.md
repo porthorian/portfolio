@@ -1,24 +1,21 @@
-# vinniemarone
+# Vinnie Marone Portfolio
 
-## Project setup
+## Project Setup
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
+npm run dev
+```
+
+### Run a preview with no hot reload
+```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Building
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
