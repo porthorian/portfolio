@@ -24,11 +24,10 @@ export class TerminalController {
         });
         const fit = new FitAddon();
         this.term.loadAddon(fit);
-
         this.setUser('guest');
         this.setMachine('vinniemarone.dev');
-        this.setSeparator(':');
-        this.setWelcome('Hello, and remember with great power comes great responsibility.');
+        this.setSeparator(': ~]$');
+        this.setWelcome('Hello');
 
         this.term.open(document.getElementById('terminal')!);
         fit.fit();

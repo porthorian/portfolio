@@ -1,12 +1,21 @@
 import { CommandConstructor } from "./Command";
 import { Utils as U} from "../utils";
 import { TerminalController } from "../terminal";
+
 import { AgeCommand } from "./AgeCommand";
+import { CatCommand } from "./CatCommand";
+import { ClearCommand } from "./ClearCommand";
 import { HelpCommand } from "./HelpCommand";
+import { LsCommand } from "./LsCommand";
+import { WgetCommand } from "./WgetCommand";
 
 export const commands: {[key:string]: CommandConstructor}  = {
     'age': AgeCommand,
+    'cat': CatCommand,
+    'clear': ClearCommand,
     'help': HelpCommand,
+    'ls': LsCommand,
+    'wget': WgetCommand,
 }
 
 export class CommandsController {
@@ -17,7 +26,7 @@ export class CommandsController {
     }
 
     runCommand(currentLine: string):string {
-        if (currentLine == '') {
+        if (currentLine.trim() == '') {
             return '';
         }
 
@@ -30,7 +39,8 @@ export class CommandsController {
         this.controller.addEntry();
 
         if (commands.hasOwnProperty(command)) {
-            return (new commands[command]).run(args);
+            let controller = new commands[command](this.controller);
+            return controller.run(args);
         }
 
         // Error
