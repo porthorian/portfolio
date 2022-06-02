@@ -6,12 +6,14 @@ import { AgeCommand } from "./AgeCommand";
 import { ClearCommand } from "./ClearCommand";
 import { HelpCommand } from "./HelpCommand";
 import { GithubCommand } from "./GithubCommand";
+import { ResumeCommand } from "./ResumeCommand";
 
 export const commands: {[key:string]: CommandConstructor}  = {
     'age': AgeCommand,
     'clear': ClearCommand,
     'help': HelpCommand,
-    'github': GithubCommand
+    'github': GithubCommand,
+    'resume': ResumeCommand,
 }
 
 export class CommandsController {
