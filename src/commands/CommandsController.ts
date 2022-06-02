@@ -3,19 +3,13 @@ import { Utils as U} from "../utils";
 import { TerminalController } from "../terminal";
 
 import { AgeCommand } from "./AgeCommand";
-import { CatCommand } from "./CatCommand";
 import { ClearCommand } from "./ClearCommand";
 import { HelpCommand } from "./HelpCommand";
-import { LsCommand } from "./LsCommand";
-import { WgetCommand } from "./WgetCommand";
 
 export const commands: {[key:string]: CommandConstructor}  = {
     'age': AgeCommand,
-    'cat': CatCommand,
     'clear': ClearCommand,
     'help': HelpCommand,
-    'ls': LsCommand,
-    'wget': WgetCommand,
 }
 
 export class CommandsController {
