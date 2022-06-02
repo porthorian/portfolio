@@ -27,7 +27,7 @@ export class TerminalController {
         this.setUser('guest');
         this.setMachine('vinniemarone.dev');
         this.setSeparator(': ~]$');
-        this.setWelcome('Hello');
+        this.setWelcome("Hello my name is Vincent Marone! All my friends call me Vinnie.\n\rI am a software engineer that enjoys linux and tinkering with servers to achieve my goals.\n\rType `help` to view available commands.");
 
         this.term.open(document.getElementById('terminal')!);
         fit.fit();
