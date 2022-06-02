@@ -1,5 +1,4 @@
 import { CommandInterface } from "./Command";
-import { Utils as U} from "../utils";
 
 export class ResumeCommand implements CommandInterface {
 	controller: TerminalController;

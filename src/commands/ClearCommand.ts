@@ -1,5 +1,4 @@
 import { CommandInterface } from "./Command";
-import { Utils as U} from "../utils";
 
 export class ClearCommand implements CommandInterface {
 	controller: TerminalController;
@@ -14,6 +13,6 @@ export class ClearCommand implements CommandInterface {
 
 	run(args:string[]) {
 		this.controller.term.reset();
-		this.controller.writePrompt();
+		return '';
 	}
 }

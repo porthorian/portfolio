@@ -1,5 +1,4 @@
 import { CommandInterface } from "./Command";
-import { Utils as U} from "../utils";
 
 const github_url = "https://github.com/Porthorian";
 export class GithubCommand implements CommandInterface {
@@ -14,7 +13,7 @@ export class GithubCommand implements CommandInterface {
 	}
 
 	run(args:string[]) {
-		let timeout = setTimeout(function() {
+		setTimeout(function() {
 			window.open(github_url, '_blank');
 		}, 1000);
 
