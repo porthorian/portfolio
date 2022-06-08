@@ -37,8 +37,9 @@ export class CommandsController {
         this.controller.addEntry();
 
         if (commands.hasOwnProperty(command)) {
-            let controller = new commands[command](this.controller);
-            return controller.run(args);
+            let executor = new commands[command]();
+
+            return executor.run(args, this.controller);
         }
 
         // Error

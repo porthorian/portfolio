@@ -3,10 +3,6 @@ import { CommandInterface } from "./Command";
 import { Utils as U} from "../utils";
 
 export class HelpCommand implements CommandInterface {
-    constructor() {
-
-    }
-
     help() {
         return 'I need somebody\r\n(Help!) not just anybody\r\n(Help!) you know I need someone\r\nHeeeeelp!';
     }
