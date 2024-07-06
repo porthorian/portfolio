@@ -8,7 +8,7 @@
     "lint": "tsc"
   },
   "devDependencies": {
-    "typescript": "^4.3.2",
+    "typescript": "^5.5.3",
     "vite": "^2.4.2"
   },
   "dependencies": {
