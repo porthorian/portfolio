@@ -5,7 +5,7 @@ on:
     tags: ["v*.*.*"]
 
 env:
-  IMAGE_NAME: node_server
+  IMAGE_NAME: nginx_server
   REGISTRY: ghcr.io
   PACKAGE_PATH: porthorian/portfolio
   BUILD_VERSION: ${{ github.ref_name }}
