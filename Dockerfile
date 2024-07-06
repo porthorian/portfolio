@@ -10,7 +10,6 @@ RUN npm run build
 
 FROM nginx:stable-alpine-slim
 WORKDIR /
-EXPOSE 3000
 
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /workspace/dist /usr/share/nginx/html/.
