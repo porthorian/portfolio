@@ -1,4 +1,4 @@
-FROM node:22.8-alpine AS builder
+FROM node:22.9-alpine AS builder
 
 WORKDIR /workspace
 
