@@ -7,8 +7,8 @@ export class AgeCommand implements CommandInterface {
     }
 
     run(args:string[]) {
-        const birthday = '1996-04-12 03:45:00 GMT-5';
-        const seconds = Math.floor((new Date().getTime() - new Date(birthday).getTime()) / 1000);
+        const birthday = new Date('1996-04-12T08:45:00Z');
+        const seconds = Math.floor((new Date().getTime() - birthday.getTime()) / 1000);
 
         let minutes = (seconds: number) => Math.floor(seconds / 60);
         let hours = (seconds: number) => Math.floor(minutes(seconds) / 60);
@@ -24,7 +24,7 @@ export class AgeCommand implements CommandInterface {
         if (args.length === 1) {
             switch (args[0]) {
                 case '-b':
-                    return new Date(birthday).toDateString();
+                    return birthday.toDateString();
                 case '-M':
                     return months(seconds) + ' months';
                 case '-w':
