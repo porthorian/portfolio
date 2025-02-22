@@ -1,0 +1,187 @@
+baseURL: https://example.org/
+languageCode: en-US
+title: My New Hugo Site
+module:
+  hugoVersion:
+    extended: false
+    min: 0.116.0
+
+params:
+  info:
+    name: Vincent Marone
+    profession: Software Engineer
+    email: vinnie.marone35@gmail.com
+    phone: +1 732-522-8153
+    location: Eatontown, New Jersey
+    website: vinniemarone.dev
+  languages:
+    - PHP
+    - Python
+    - Go
+    - Bash
+    - Javascript/Typescript
+    - Java
+    - C
+    - C++
+    - SQL
+    - HTML
+    - CSS
+  technical:
+    - Git
+    - Linux
+    - CEPH
+    - S3
+    - Kubernetes
+    - NodeJS
+    - Docker
+    - Nginx
+    - Networking
+    - Ansible
+    - Puppet
+    - SQL (Mysql, Mariadb, Postgres)
+    - NoSQL (MongoDB)
+    - Redis
+    - CI/CD Pipelines (Github, Gitlab)
+    - Cloudinit
+    - Vagrant
+    - Packer
+    - Qemu/KVM
+    - Libvirt
+    - Webpack
+    - Vite
+    - RabbitMQ
+    - Elastic Search
+    - Graylog
+    - Terraform
+  cloud:
+    - Vultr
+    - DigitalOcean
+    - Google Cloud
+    - AWS
+  professional:
+    - Jira
+    - Github
+    - Gitlab
+  frameworks:
+    - Controller-Runtime
+    - Gin
+    - Chi
+    - Java Spring
+    - Slim Framework
+    - Laravel
+    - PHPUnit
+    - VueJS
+    - Vuetify
+    - jQuery
+    - Bootstrap
+  education:
+    - school: Brookdale Community College
+      location: Lincroft, New Jersey
+      yearOfDegree: 2018
+      degree: "Associate of Science: Computer Science"
+  interests:
+    - Coding
+    - Stocks
+    - Videogames
+    - Biking
+    - Hiking
+    - Snowboarding
+    - Movies
+    - Hockey - NJ Devils
+    - TV
+    - Paintabll
+  workExperience:
+    jobs:
+      - company: CoreWeave
+        date: Feb 2023 - Present
+        roles:
+          - role: Infrastructure Engineer
+            accomplishments:
+              - Spearheaded critical infrastructure projects, enhancing CoreWeave's node provisioning.
+              - Led and mentored a team through complex, interconnected system projects.
+              - Successfully managed multiple systems, balancing priorities and timelines for efficient solutions.
+              - Exemplified technical leadership, applying deep understanding of CoreWeave's software stack.
+              - Developed advanced problem-solving skills, designing scalable solutions across multiple systems.
+              - Cultivated strong leadership and mentoring abilities, fostering collaboration and accountability.
+              - Embodied CoreWeave's core values, fostering a culture of ownership, curiosity, and collaboration.
+              - Built and maintained tools, including cw-node-controller and cwctl, to automate node health and provisioning, remove legacy controllers, and streamline operations.
+              - Designed and implemented lokiforward, and rewrote promforward, to enhance application efficiency, maintainability, and future feature integration.
+              - Developed an automatic Mellanox firmware upgrade tool to ensure network interface card health and stability.
+              - Migrated Kyverno policies to jspolicy to optimize security policy management and enable Kyverno phase-out.
+              - Contributed to multiple projects enhancing their testability, maintainability and operational efficiency
+              - Proactively learned new technologies and skills, including Kubernetes and a new programming language and tech stack, to successfully deliver projects and solutions.
+              - Demonstrated effective problem-solving and decision-making skills, taking calculated risks and anticipating potential problems.
+              - Exemplified ownership and accountability, taking responsibility for actions, following through on commitments, and maintaining confidentiality.
+              - Showcased adaptability and a positive attitude when responding to changing circumstances, learning new skills, and working with new colleagues.
+              - Fostered a collaborative and respectful team environment, building partnerships and maintaining mutual trust and candor.
+              - Consistently exceeded expectations in delivering tailored solutions and making a measurable impact on project outcomes, even without direct client interaction.
+
+              - Led a team of 3 engineers in the development of fleet-lifecycle-controller and ficc-helper, utilizing Golang and the controller-runtime library to enhance CoreWeave's node provisioning process.    
+              - Coordinated with multiple teams across the organization to ensure seamless integration of fleet-lifecycle-controller and ficc-helper with existing systems, resulting in improved efficiency and resource availability.    
+              - Successfully managed the complexities of the fleet-lifecycle-controller project, which involved multiple interconnected systems (ficc-helper, cw-node-controller, cwctl).   
+              - Applied deep technical expertise and creative problem-solving to address the challenges of CoreWeave's node provisioning stack within the fleet-lifecycle-controller project.    
+              - Designed and implemented lokiforward and rewrote promforward to improve application efficiency, maintainability, and future feature integration.    
+              - Developed an automated Mellanox firmware upgrade tool to ensure network interface card health and stability, minimizing downtime.    
+              - Migrated Kyverno policies to jspolicy to optimize policy management and enable the phasing out of Kyverno.    
+              - Built and maintained tools such as cw-node-controller and cwctl to automate node health checks, provisioning, and streamline operations.    
+              - Rewrote the entire codebase of promforward, enhancing its maintainability and efficiency.   
+              - Improved the packaging and testing procedures for the node controller project code, increasing operational efficiency.    
+              - Demonstrated expertise in Kubernetes by writing effective controllers and automating tasks.   
+              - Showcased adaptability by quickly learning and mastering a new programming language and tech stack to meet project needs.    
+              - Contributed to multiple projects, enhancing their testability, maintainability, and operational efficiency.    
+              - Proactively learned new technologies and skills, including Kubernetes, to successfully deliver projects and solutions.    
+              - Received consistently positive performance reviews, exceeding expectations in delivering tailored solutions and making a measurable impact on project outcomes.    
+      - company: Trader Interactive
+        date: Nov 2022 - Feb 2023
+        roles:
+          - role: Senior Software Engineer
+            accomplishments:
+              - Migrated PHP 7.4 applications to PHP 8.0.
+              - Planned a migration path and upgraded from Laravel 7 to Laravel 8.
+              - Participated in Backlog Grooming, Daily Sprint Standups, and Sprint Planning.
+              - Lead multiple architecture discussions to cut amazon webservices costs down drastically.
+              - Improved automation of development environment for future onboarding of developers.
+      - company: Constant LCC / Vultr
+        date: Jan 2019 - July 2022
+        roles:
+          - role: Senior Platform Engineer
+            accomplishments:
+              - Architected and implemented a fault-tolerant performance backup system that scaled to over 500,000+ customer virtual machines.
+              - Led design and development of a block storage product, which led to 150% increase in revenue.
+              - Improved platform reliability by reducing PHP error rates by 85%.
+              - Architected, designed and implemented CEPH backed storage as a disk storage option for VM's.
+              - Modernized mission-critical systems to be distributed across 12,000+ VM host macro service that handled all customer virtual machine automation. Provisioning, Configuration, and Cleaning up.
+              - Helped maintain existing production clusters and participated in an on-call rotation.
+              - Was the Sole Maintainer of multiple customer facing vultr products related to CEPH.
+              - Handled unusual technical issues, acted as a final level of escalation.
+              - Coordinated/Participated in Sprint Planning and had weekly 1 on 1's to remove impediments.
+              - Mentored junior developers, conducted code review to ensure compliance with corporate standards
+          - role: Platform Engineer
+            accomplishments:
+              - Built a process manager queue system that powers all PHP asynchronous scripts at vultr.
+              - Architected and implemented a migration tool to sunset 15 old CEPH clusters in 16 different Datacnters transferring petabytes of data from 1 CEPH cluster to a new CEPH cluster.
+              - Wrote and maintained an open source PHP client https://github.com/vultr/vultr-php
+              - Created CI/CD pipelines for rpm/apt builds, automated tests, and deployment cycles.
+              - Implemented a rollback feature for FRR routing configs which decreased datacenter outage rates by 40% using Python and vtysh to validate BGP sessions.
+              - Architected and implemented Crypto Currency payment options into Vultr's Billing System.
+          - role: Software Engineer
+            accomplishments:
+              - Built a IP Subnet scanner that used a collection of SORBS using Laravel(PHP) and VueJS.
+              - Built a Sitemap generator that generated an xml with thousands of URLs.
+              - Implemented a single pane of glass view for monitoring 27 different datacenters, reducing false positive alerts. Built using Icinga, VueJS, Laravel(PHP), and NodeJS.
+              - Designed, architected, and implemented a user permission system for internal facing dashboards using bitwise operators in PHP.
+              - Architected, designed, and implemented a speedtest/pinghost. It was deployed to over 27 Datacenters using CI/CD pipelines.
+      - company: Zodiac Aerospace
+        date: Aug 2018 - Dec 2018
+        roles:
+          - role: Support Developer
+            accomplishments:
+              - Efficiently migrated terabytes of data from over 50 computers throughout the office into dropbox using Java to autodetect, remove, and upload for the client.
+              - Facilitated employee support requests fixing any sort of computer problem they may have had.
+      - company: Liveshopbuy Inc
+        date: June 2018 - Aug 2018
+        roles:
+          - role: Software Developer Intern
+            accomplishments:
+              - Wrote a magento seller coupon module in PHP.
+              - Wrote a GDPR Pop-up Javascript Plugin.

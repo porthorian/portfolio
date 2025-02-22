@@ -1,0 +1,22 @@
+name: Resume Version 1
+license: MIT
+licenselink: https://github.com/owner/repo
+description: Resume Version 1
+homepage: https://github.com/owner/repo
+demosite: https://github.com/owner/repo
+
+authors:
+  - name: Name of Author
+    homepage: Website of author
+  - name: Name of Author
+    homepage: Website of author
+
+author:
+  name: Your name
+  homepage: Your website
+
+original:
+  author: Name of original author
+  homepage: Website of original author
+  repo: https://github.com/owner/repo
+  

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <header>
+    <h1>{{ .Site.Params.info.name }}</h1>
+    <h2>{{ .Site.Params.info.profession }}</h2>
+  </header>
+  <div class="side-container">
+    {{ if and .Site.Params.languages (gt (len .Site.Params.languages) 0) }}
+    <section>
+      <h4>Languages</h4>
+      <ul>
+        {{ range .Site.Params.languages }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+    {{ if and .Site.Params.technical (gt (len .Site.Params.technical) 0) }}
+    <section>
+      <h4>Technical</h4>
+      <ul>
+        {{ range .Site.Params.technical }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+    {{ if and .Site.Params.cloud (gt (len .Site.Params.cloud) 0) }}
+    <section>
+      <h4>Cloud</h4>
+      <ul>
+        {{ range .Site.Params.cloud }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+    {{ if and .Site.Params.frameworks (gt (len .Site.Params.frameworks) 0) }}
+    <section>
+      <h4>Frameworks</h4>
+      <ul>
+        {{ range .Site.Params.frameworks }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+    {{ if and .Site.Params.professional (gt (len .Site.Params.professional) 0) }}
+    <section>
+      <h4>Professional</h4>
+      <ul>
+        {{ range .Site.Params.professional }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+    {{ if and .Site.Params.education (gt (len .Site.Params.education) 0) }}
+    <section class="education">
+      <h3>Education</h3>
+      {{ range .Site.Params.education }}
+      <div class="education-item">
+        <span>{{ .yearOfDegree }}</span>
+        <h4>{{ .degree }}</h4>
+        <span style="display: block">{{ .school }}</span>
+        <span>{{ .location }}</span>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+  </div>
+  <div class="container">
+    {{ if and .Site.Params.workExperience.jobs (gt (len .Site.Params.workExperience.jobs) 0) }}
+    <section>
+      <h2>Work Experience</h2>
+      {{ range .Site.Params.workExperience.jobs }}
+      <div class="job">
+        <h3>{{ .company }}</h3>
+        <h4>{{ .date }}</h4>
+        {{ if and .roles (gt (len .roles) 0) }}
+        {{ range .roles }}
+        <div class="role">
+          <h4>{{ .role }}</h4>
+          {{ if and .accomplishments (gt (len .accomplishments) 0) }}
+          <ul>
+            {{ range .accomplishments }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+  </div>
+</body>
+</html>

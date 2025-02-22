@@ -25,6 +25,12 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      # - name: html to pdf
+      #   uses: fifsky/html-to-pdf-action@master
+      #   with:
+      #     htmlFile: ./public/index.html
+      #     outputFile: ./public/resume.pdf
+      #     pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
       - name: Set Tag
         run: |
           echo "TAG=${{ env.REGISTRY }}/${{ env.PACKAGE_PATH }}/${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}" >> $GITHUB_ENV
