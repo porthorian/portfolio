@@ -10,22 +10,20 @@ params:
   info:
     name: Vincent Marone
     profession: Software Engineer
-    email: vinnie.marone35@gmail.com
+    email: vinnie.marone35+resume@gmail.com
     phone: +1 732-522-8153
     location: Eatontown, New Jersey
     website: vinniemarone.dev
   languages:
+    - Go
     - PHP
     - Python
-    - Go
     - Bash
     - Javascript/Typescript
     - Java
     - C
     - C++
     - SQL
-    - HTML
-    - CSS
   technical:
     - Git
     - Linux
