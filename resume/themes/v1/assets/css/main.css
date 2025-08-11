@@ -214,4 +214,9 @@
       .bullets li {
         font-size: 8px;
       }
+
+      aside.side section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
     }
