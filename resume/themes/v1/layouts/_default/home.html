@@ -2,103 +2,147 @@
 <html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
   {{ partial "head.html" . }}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-  <header>
-    <h1>{{ .Site.Params.info.name }}</h1>
-    <h2>{{ .Site.Params.info.profession }}</h2>
-  </header>
-  <div class="side-container">
-    {{ if and .Site.Params.languages (gt (len .Site.Params.languages) 0) }}
-    <section>
-      <h4>Languages</h4>
-      <ul>
-        {{ range .Site.Params.languages }}
-        <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-    {{ if and .Site.Params.technical (gt (len .Site.Params.technical) 0) }}
-    <section>
-      <h4>Technical</h4>
-      <ul>
-        {{ range .Site.Params.technical }}
-        <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-    {{ if and .Site.Params.cloud (gt (len .Site.Params.cloud) 0) }}
-    <section>
-      <h4>Cloud</h4>
-      <ul>
-        {{ range .Site.Params.cloud }}
-        <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-    {{ if and .Site.Params.frameworks (gt (len .Site.Params.frameworks) 0) }}
-    <section>
-      <h4>Frameworks</h4>
-      <ul>
-        {{ range .Site.Params.frameworks }}
-        <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-    {{ if and .Site.Params.professional (gt (len .Site.Params.professional) 0) }}
-    <section>
-      <h4>Professional</h4>
-      <ul>
-        {{ range .Site.Params.professional }}
-        <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-    {{ if and .Site.Params.education (gt (len .Site.Params.education) 0) }}
-    <section class="education">
-      <h3>Education</h3>
-      {{ range .Site.Params.education }}
-      <div class="education-item">
-        <span>{{ .yearOfDegree }}</span>
-        <h4>{{ .degree }}</h4>
-        <span style="display: block">{{ .school }}</span>
-        <span>{{ .location }}</span>
+  <div class="page">
+    <!-- Header -->
+    <header class="resume-header">
+      <div>
+        <div class="name">{{ .Site.Params.info.name }}</div>
+        <div class="title">{{ .Site.Params.info.profession }}</div>
       </div>
-      {{ end }}
-    </section>
-    {{ end }}
-  </div>
-  <div class="container">
-    {{ if and .Site.Params.workExperience.jobs (gt (len .Site.Params.workExperience.jobs) 0) }}
-    <section>
-      <h2>Work Experience</h2>
-      {{ range .Site.Params.workExperience.jobs }}
-      <div class="job">
-        <h3>{{ .company }}</h3>
-        <h4>{{ .date }}</h4>
-        {{ if and .roles (gt (len .roles) 0) }}
-        {{ range .roles }}
-        <div class="role">
-          <h4>{{ .role }}</h4>
-          {{ if and .accomplishments (gt (len .accomplishments) 0) }}
-          <ul>
-            {{ range .accomplishments }}
-            <li>{{ . }}</li>
-            {{ end }}
+      <div class="contact">
+        {{ with .Site.Params.info.email }}<span><a href="mailto:{{ . }}">{{ . }}</a></span>{{ end }}
+        {{ with .Site.Params.info.phone }}<span>{{ . }}</span>{{ end }}
+        {{ with .Site.Params.info.location }}<span class="muted">{{ . }}</span>{{ end }}
+        {{ with .Site.Params.info.website }}<span><a href="https://{{ . }}" rel="noopener">{{ . }}</a></span>{{ end }}
+      </div>
+    </header>
+
+    <!-- Main two columns -->
+    <div class="columns">
+      <!-- LEFT: Skills / Tech / Education / Interests / Professional -->
+      <aside class="side">
+        {{ if and .Site.Params.languages (gt (len .Site.Params.languages) 0) }}
+        <section>
+          <div class="sec-title">Languages</div>
+          <ul class="chiplist">
+            {{ range .Site.Params.languages }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </section>
+        {{ end }}
+
+        {{ if and .Site.Params.technical (gt (len .Site.Params.technical) 0) }}
+        <section>
+          <div class="sec-title">Technical</div>
+          <ul class="chiplist">
+            {{ range .Site.Params.technical }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </section>
+        {{ end }}
+
+        {{ if and .Site.Params.frameworks (gt (len .Site.Params.frameworks) 0) }}
+        <section>
+          <div class="sec-title">Frameworks</div>
+          <ul class="chiplist">
+            {{ range .Site.Params.frameworks }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </section>
+        {{ end }}
+
+        {{ if or (and .Site.Params.professional (gt (len .Site.Params.professional) 0)) (and .Site.Params.cloud (gt (len .Site.Params.cloud) 0)) }}
+        <section>
+          <div class="sec-title">Professional</div>
+          {{ if and .Site.Params.professional (gt (len .Site.Params.professional) 0) }}
+          <ul class="chiplist" style="margin-bottom:6px">
+            {{ range .Site.Params.professional }}<li>{{ . }}</li>{{ end }}
           </ul>
           {{ end }}
-        </div>
+          {{ if and .Site.Params.cloud (gt (len .Site.Params.cloud) 0) }}
+          <ul class="chiplist">
+            {{ range .Site.Params.cloud }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+        </section>
         {{ end }}
+
+        {{ if and .Site.Params.interests (gt (len .Site.Params.interests) 0) }}
+        <section>
+          <div class="sec-title">Interests</div>
+          <ul class="chiplist">
+            {{ range .Site.Params.interests }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </section>
         {{ end }}
-      </div>
-      {{ end }}
-    </section>
-    {{ end }}
+      </aside>
+
+      <!-- RIGHT: Work Experience -->
+      <section class="work">
+        <div class="sec-title">Work Experience</div>
+        {{ if and .Site.Params.workExperience.jobs (gt (len .Site.Params.workExperience.jobs) 0) }}
+          {{ range .Site.Params.workExperience.jobs }}
+          <article class="job">
+            <div class="job-head">
+              <div class="company">{{ .company }}</div>
+              <div class="daterange">• {{ .date }}</div>
+            </div>
+
+            {{ if and .roles (gt (len .roles) 0) }}
+              {{ range .roles }}
+                <div class="role">
+                  <div class="role-title">{{ .role }}</div>
+                  {{ if and .accomplishments (gt (len .accomplishments) 0) }}
+                    <ul class="bullets">
+                      {{ range .accomplishments }}<li>{{ . }}</li>{{ end }}
+                    </ul>
+                  {{ end }}
+                </div>
+              {{ end }}
+            {{ end }}
+          </article>
+          {{ end }}
+        {{ end }}
+        {{ if and .Site.Params.education (gt (len .Site.Params.education) 0) }}
+        <section>
+          <div class="sec-title">Education</div>
+          {{ range .Site.Params.education }}
+          <div class="edu-item">
+            <div><strong>{{ .degree }}</strong></div>
+            <div>{{ .school }}</div>
+            <div class="muted">{{ .location }} • {{ .yearOfDegree }}</div>
+          </div>
+          {{ end }}
+        </section>
+        {{ end }}
+        {{ if and .Site.Params.references (gt (len .Site.Params.references) 0) }}
+          <section class="references">
+            <div class="sec-title">References</div>
+            <div class="ref-grid">
+              {{ range .Site.Params.references }}
+              <article class="ref-card">
+                <div class="ref-icon" aria-hidden="true">
+                  <!-- simple inline avatar icon (no external assets) -->
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6v1H4v-1z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="ref-name">{{ .name }}</h4>
+                  {{ with .title }}<p class="ref-role">{{ . }} @</p>{{ end }}
+                  {{ with .company }}<p class="ref-company">{{ . }}</p>{{ end }}
+                  {{ with .email }}
+                    <p class="ref-email"><span class="label">E :</span> {{ . }}</p>
+                  {{ end }}
+                </div>
+              </article>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+      </section>
+    </div>
   </div>
 </body>
 </html>

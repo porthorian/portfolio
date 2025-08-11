@@ -14,6 +14,19 @@ params:
     phone: +1 732-522-8153
     location: Eatontown, New Jersey
     website: vinniemarone.dev
+  references:
+    - name: Eric Van Trease
+      title: Senior Solutions Architect
+      company: Wasabi Technologies
+      email: eric.vantrease@gmail.com
+    - name: Lee Martin
+      title: Senior Software Engineer
+      company: Coreweave Inc
+      email: lee@leemartin.us
+    - name: Mike Biondi
+      title: Director of Engineering, Cloud Native
+      company: Vultr
+      email: biondizzle@gmail.com
   languages:
     - Go
     - PHP
@@ -33,24 +46,25 @@ params:
     - NodeJS
     - Docker
     - Nginx
-    - Networking
+    - BGP
+    - FRR
     - Ansible
     - Puppet
     - SQL (Mysql, Mariadb, Postgres)
     - NoSQL (MongoDB)
     - Redis
-    - CI/CD Pipelines (Github, Gitlab)
+    - CI/CD Pipelines
     - Cloudinit
     - Vagrant
     - Packer
     - Qemu/KVM
     - Libvirt
-    - Webpack
     - Vite
     - RabbitMQ
-    - Elastic Search
-    - Graylog
     - Terraform
+    - gRPC
+    - Prometheus
+    - Loki
   cloud:
     - Vultr
     - DigitalOcean
@@ -81,54 +95,96 @@ params:
     - Coding
     - Stocks
     - Videogames
+    - Flying
+    - Homelab
     - Biking
     - Hiking
+    - Fishing
     - Snowboarding
-    - Movies
+    - Paintball
     - Hockey - NJ Devils
+    - Movies
     - TV
-    - Paintabll
   workExperience:
     jobs:
       - company: CoreWeave
         date: Feb 2023 - Present
         roles:
+          - role: Senior Software Engineer I
+            accomplishments:
+              - Led the decommissioning of CoreWeave’s cw-node-controller, architecting and implementing its migration into the more efficient fleet-lifecycle-controller, resulting in streamlined node provisioning and management.
+              - Enhanced the node eviction process by designing a robust root-cause analysis system, enabling automated, data-driven eviction decisions and reducing manual intervention.
+              - Engineered seamless state synchronization between cw-node-controller and fleet-lifecycle-controller during migration, ensuring uninterrupted operations and zero downtime for customer workloads.
+              - Implemented comprehensive metrics for node eviction to give fleet-lifecycle-controller deeper insights into the node eviction process to help us meet SLI and SLO targets.
+          # - role: Team Lead Engineer
+          #   accomplishments:
+          #     - Led a team of 3 engineers in the development of fleet-lifecycle-controller and ficc-helper, utilizing Golang and the controller-runtime library to enhance CoreWeave's node provisioning process.    
+          #     - Coordinated with multiple teams across the organization to ensure seamless integration of fleet-lifecycle-controller and ficc-helper with existing systems, resulting in improved efficiency and resource availability.    
+          #     - Successfully managed the complexities of the fleet-lifecycle-controller project, which involved multiple interconnected systems (ficc-helper, cw-node-controller, cwctl).   
+          #     - Applied deep technical expertise and creative problem-solving to address the challenges of CoreWeave's node provisioning stack within the fleet-lifecycle-controller project. 
+          # - role: Infrastructure Engineer
+          #   accomplishments:
+          #     - Spearheaded critical infrastructure projects, enhancing CoreWeave's node provisioning.
+          #     - Mentored a team through complex, interconnected system projects.
+          #     - Successfully managed multiple systems, balancing priorities and timelines for efficient solutions.
+          #     - Exemplified technical leadership, applying deep understanding of CoreWeave's software stack.
+          #     - Developed advanced problem-solving skills, designing scalable solutions across multiple systems.
+          #     - Cultivated strong leadership and mentoring abilities, fostering collaboration and accountability.
+          #     - Embodied CoreWeave's core values, fostering a culture of ownership, curiosity, and collaboration.
+          #     - Built and maintained tools, including cw-node-controller and cwctl, to automate node health and provisioning, remove legacy controllers, and streamline operations.
+          #     - Designed and implemented lokiforward, and rewrote promforward, to enhance application efficiency, maintainability, and future feature integration.
+          #     - Developed an automatic Mellanox firmware upgrade tool to ensure network interface card health and stability.
+          #     - Migrated Kyverno policies to jspolicy to optimize security policy management and enable Kyverno phase-out.
+          #     - Contributed to multiple projects enhancing their testability, maintainability and operational efficiency
+          #     - Proactively learned new technologies and skills, including Kubernetes and a new programming language and tech stack, to successfully deliver projects and solutions.
+          #     - Demonstrated effective problem-solving and decision-making skills, taking calculated risks and anticipating potential problems.
+          #     - Exemplified ownership and accountability, taking responsibility for actions, following through on commitments, and maintaining confidentiality.
+          #     - Showcased adaptability and a positive attitude when responding to changing circumstances, learning new skills, and working with new colleagues.
+          #     - Fostered a collaborative and respectful team environment, building partnerships and maintaining mutual trust and candor.
+          #     - Consistently exceeded expectations in delivering tailored solutions and making a measurable impact on project outcomes, even without direct client interaction.
+
+          #     - Designed and implemented lokiforward and rewrote promforward to improve application efficiency, maintainability, and future feature integration.    
+          #     - Developed an automated Mellanox firmware upgrade tool to ensure network interface card health and stability, minimizing downtime.    
+          #     - Migrated Kyverno policies to jspolicy to optimize policy management and enable the phasing out of Kyverno.    
+          #     - Built and maintained tools such as cw-node-controller and cwctl to automate node health checks, provisioning, and streamline operations.    
+          #     - Rewrote the entire codebase of promforward, enhancing its maintainability and efficiency.   
+          #     - Improved the packaging and testing procedures for the node controller project code, increasing operational efficiency.    
+          #     - Demonstrated expertise in Kubernetes by writing effective controllers and automating tasks.   
+          #     - Showcased adaptability by quickly learning and mastering a new programming language and tech stack to meet project needs.    
+          #     - Contributed to multiple projects, enhancing their testability, maintainability, and operational efficiency.    
+          #     - Proactively learned new technologies and skills, including Kubernetes, to successfully deliver projects and solutions.    
+          #     - Received consistently positive performance reviews, exceeding expectations in delivering tailored solutions and making a measurable impact on project outcomes.
+          - role: Provisioning Team Lead
+            accomplishments:
+            - Took full ownership of critical infrastructure projects including fleet-lifecycle-controller, cw-node-controller, flcc-helper, epimetheus, and cwctl—key components forming the backbone of CoreWeave’s node provisioning infrastructure.
+            - Applied deep technical expertise to manage complex interdependencies between systems, ensuring reliable delivery of healthy nodes to customer clusters and automated removal/replacement of unhealthy nodes, directly impacting revenue.
+            - Acted as a primary technical point of contact between the FLCC team and leaders in other engineering areas, keeping the team aligned with upstream dependencies, new designs, and strategic initiatives.
+            - Led design and implementation efforts across multiple high-impact systems, balancing urgent fixes with long-term scalability and efficiency goals.
+            - Introduced innovative processes to streamline node provisioning operations, improving stability, performance, and maintainability across the provisioning stack.
+            - Drove improvements in code quality and maintainability through rigorous code reviews, architectural guidance, and hands-on refactoring of complex systems.
+            - Proactively mentored and supported team members, guiding them through debugging, architectural decisions, and ownership of individual components to foster skill development and autonomy.
+            - Developed strategies to balance planned feature development with unplanned reactive work, helping to shift team operations toward a healthier 50/50 planned-to-unplanned workload.
+            - Implemented delegation practices to reduce bottlenecks, empowering team members to take on critical responsibilities and improving collective team throughput.
+            - Enhanced communication within the team through daily standups, collaborative troubleshooting sessions, and tailored communication approaches for different team members, increasing alignment and transparency.
+            - Strengthened leadership capabilities by managing multi-faceted, business-critical projects, coordinating work across parallel development streams, and maintaining focus under high-pressure timelines.
+            - Refined advanced problem-solving skills by designing scalable solutions that address cross-system complexities while minimizing downstream risk.
+            - Contributed to innovation and technical direction by identifying architectural improvements, evaluating trade-offs, and implementing solutions that support both immediate needs and long-term vision.
+            - Represented the team and CoreWeave leadership in strategic discussions, ensuring technical decisions align with business objectives.
+            - Cultivated a collaborative, high-performing team culture by fostering trust, respect, and shared accountability, fully embodying CoreWeave’s values of “Achieve More Together” and “Empower Employees.”
           - role: Infrastructure Engineer
             accomplishments:
-              - Spearheaded critical infrastructure projects, enhancing CoreWeave's node provisioning.
-              - Led and mentored a team through complex, interconnected system projects.
-              - Successfully managed multiple systems, balancing priorities and timelines for efficient solutions.
-              - Exemplified technical leadership, applying deep understanding of CoreWeave's software stack.
-              - Developed advanced problem-solving skills, designing scalable solutions across multiple systems.
-              - Cultivated strong leadership and mentoring abilities, fostering collaboration and accountability.
-              - Embodied CoreWeave's core values, fostering a culture of ownership, curiosity, and collaboration.
-              - Built and maintained tools, including cw-node-controller and cwctl, to automate node health and provisioning, remove legacy controllers, and streamline operations.
-              - Designed and implemented lokiforward, and rewrote promforward, to enhance application efficiency, maintainability, and future feature integration.
-              - Developed an automatic Mellanox firmware upgrade tool to ensure network interface card health and stability.
-              - Migrated Kyverno policies to jspolicy to optimize security policy management and enable Kyverno phase-out.
-              - Contributed to multiple projects enhancing their testability, maintainability and operational efficiency
-              - Proactively learned new technologies and skills, including Kubernetes and a new programming language and tech stack, to successfully deliver projects and solutions.
-              - Demonstrated effective problem-solving and decision-making skills, taking calculated risks and anticipating potential problems.
-              - Exemplified ownership and accountability, taking responsibility for actions, following through on commitments, and maintaining confidentiality.
-              - Showcased adaptability and a positive attitude when responding to changing circumstances, learning new skills, and working with new colleagues.
-              - Fostered a collaborative and respectful team environment, building partnerships and maintaining mutual trust and candor.
-              - Consistently exceeded expectations in delivering tailored solutions and making a measurable impact on project outcomes, even without direct client interaction.
-
-              - Led a team of 3 engineers in the development of fleet-lifecycle-controller and ficc-helper, utilizing Golang and the controller-runtime library to enhance CoreWeave's node provisioning process.    
-              - Coordinated with multiple teams across the organization to ensure seamless integration of fleet-lifecycle-controller and ficc-helper with existing systems, resulting in improved efficiency and resource availability.    
-              - Successfully managed the complexities of the fleet-lifecycle-controller project, which involved multiple interconnected systems (ficc-helper, cw-node-controller, cwctl).   
-              - Applied deep technical expertise and creative problem-solving to address the challenges of CoreWeave's node provisioning stack within the fleet-lifecycle-controller project.    
-              - Designed and implemented lokiforward and rewrote promforward to improve application efficiency, maintainability, and future feature integration.    
-              - Developed an automated Mellanox firmware upgrade tool to ensure network interface card health and stability, minimizing downtime.    
-              - Migrated Kyverno policies to jspolicy to optimize policy management and enable the phasing out of Kyverno.    
-              - Built and maintained tools such as cw-node-controller and cwctl to automate node health checks, provisioning, and streamline operations.    
-              - Rewrote the entire codebase of promforward, enhancing its maintainability and efficiency.   
-              - Improved the packaging and testing procedures for the node controller project code, increasing operational efficiency.    
-              - Demonstrated expertise in Kubernetes by writing effective controllers and automating tasks.   
-              - Showcased adaptability by quickly learning and mastering a new programming language and tech stack to meet project needs.    
-              - Contributed to multiple projects, enhancing their testability, maintainability, and operational efficiency.    
-              - Proactively learned new technologies and skills, including Kubernetes, to successfully deliver projects and solutions.    
-              - Received consistently positive performance reviews, exceeding expectations in delivering tailored solutions and making a measurable impact on project outcomes.    
+            - Designed and implemented lokiforward, enabling improved logging workflows.
+            - Fully rewrote Promforward, enhancing maintainability, scalability, and ease of adding future features.
+            - Built an automatic Mellanox NIC firmware upgrade tool to ensure all NICs maintain healthy, up-to-date firmware.
+            - Played a key role in building and maintaining cw-node-controller and cwctl, automating node provisioning and removing legacy controllers.
+            - Contributed/Built to multiple Kubernetes controllers (connectivity controller, HPC verification controller, label controller, condition controller), improving node health automation.
+            - Led the migration from Kyverno policies to jspolicy, enabling Kyverno phase-out and simplifying policy management.
+            - Proactively identified and implemented scalable design improvements in the node controller project, optimizing packaging, testing, and operational efficiency.
+            - Rapidly adapted to a new programming language and tech stack, delivering high-quality solutions in evolving project environments.
+            - Fostered a collaborative, respectful team culture, supporting new colleagues and encouraging open communication.
+            - Delivered tailored, high-quality solutions that consistently exceeded internal client expectations, enhancing team and company reputation.
+            - Actively sought and applied new technologies, maintaining cutting-edge skills and industry knowledge.
+            - Represented CoreWeave at KubeCon, effectively communicating product capabilities and generating new business leads.
       - company: Trader Interactive
         date: Nov 2022 - Feb 2023
         roles:
@@ -137,7 +193,6 @@ params:
               - Migrated PHP 7.4 applications to PHP 8.0.
               - Planned a migration path and upgraded from Laravel 7 to Laravel 8.
               - Participated in Backlog Grooming, Daily Sprint Standups, and Sprint Planning.
-              - Lead multiple architecture discussions to cut amazon webservices costs down drastically.
               - Improved automation of development environment for future onboarding of developers.
       - company: Constant LCC / Vultr
         date: Jan 2019 - July 2022

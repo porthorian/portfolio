@@ -1,22 +1,217 @@
-body {
-  color: #222;
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 1rem;
-  max-width: 768px;
-}
+/* ====== Visual system tuned to match the PDF ====== */
+    :root{
+      --font-ui: "Avenir Next","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      --fg:#111;
+      --muted:#4b4b4b;
+      --rule:#e6e6e6;
+      --accent:#111;
+      --side-w: 200px;   /* left column width to match PDF proportions */
+      --line: 1.45;
+      --hgap: 24px;      /* horizontal gutter between columns */
+    }
 
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
-}
+    html,body { margin:0; padding:0; }
+    body{
+      font-family:var(--font-ui);
+      color:var(--fg);
+      line-height:var(--line);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background:#fff;
+    }
 
-footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
-}
+    /* Page width similar to a resume PDF with generous margins */
+    .page{
+      max-width: 1040px;
+      margin: 36px auto 48px;
+      padding: 0 28px;
+    }
 
-a {
-  color: #00e;
-  text-decoration: none;
-}
+    /* Header: name + role + contact, compact like the PDF */
+    header.resume-header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      align-items:end;
+      column-gap: 24px;
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .name{
+      font-weight:800;
+      font-size: 34px;
+      letter-spacing:.3px;
+      line-height:1.1;
+      text-transform:none;
+    }
+    .title{
+      margin-top: 2px;
+      font-weight:600;
+      color:var(--muted);
+      font-size: 16px;
+    }
+    .contact{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      justify-self:end;
+      text-align:right;
+      font-size:14px;
+      color:var(--fg);
+    }
+    .contact a{ color:inherit; text-decoration:none; border-bottom:1px dotted #bbb; }
+    .contact .muted{ color:var(--muted); }
+
+    /* Two-column main area */
+    .columns{
+      display:grid;
+      grid-template-columns: var(--side-w) minmax(0,1fr);
+      column-gap: var(--hgap);
+    }
+
+    /* Section headings in small-caps with letterspacing, like the PDF */
+    .sec-title{
+      font-weight:800;
+      font-size:14px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color:#000;
+      margin: 14px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Left column lists styled as tight chips/bullets depending on content */
+    .side section{ margin-bottom: 18px; }
+    .chiplist{
+      list-style:none; padding:0; margin: 6px 0 0;
+      display:flex; flex-wrap:wrap; gap:6px 8px;
+      font-size: 13px;
+    }
+    .chiplist li{
+      border:1px solid #e8e8e8;
+      background:#fafafa;
+      border-radius:6px;
+      padding:2px 8px;
+    }
+    .tightlist{ margin:6px 0 0; padding-left:16px; }
+    .tightlist li{ margin:2px 0; font-size:13px; }
+
+    /* Education block */
+    .edu-item{ font-size:13.5px; margin:6px 0; }
+    .edu-item .muted{ color:var(--muted); }
+
+    /* Right column: jobs and bullets matching the PDF’s compact rhythm */
+    .work section{ margin-bottom: 18px; }
+    .job{
+      margin: 0 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .job:last-child{ border-bottom:0; padding-bottom:0; }
+    .job-head{
+      display:flex; flex-wrap:wrap; align-items:baseline; gap:10px;
+    }
+    .company{ font-weight:700; font-size:14px; }
+    .daterange{ color:var(--muted); font-size:14px; }
+    .role-title{ font-weight:600; font-size:14px; margin: 6px 0 2px; }
+    .bullets{ margin:6px 0 4px; padding-left:18px; }
+    .bullets li{ margin:2px 0; font-size:14px; }
+
+    .refs .ref{ font-size:13.5px; margin:4px 0; }
+
+    /* Print styles to retain exact look on export */
+    @media print{
+      body{ background:#fff; }
+      .page{ max-width: none; margin: 0; padding: 0 24pt; }
+      .columns{ column-gap: 18pt; grid-template-columns: 260pt 1fr; }
+      a{ text-decoration:none; }
+    }
+
+    /* Mobile fallback (single column) */
+    @media (max-width: 900px){
+      header.resume-header{ grid-template-columns: 1fr; text-align:left; }
+      .contact{ justify-self:start; text-align:left; margin-top:8px; }
+      .columns{ grid-template-columns: 1fr; }
+      .side{ order:2; }
+      .work{ order:1; }
+    }
+
+    .references {
+      margin-top: 24px;
+    }
+    .references .sec-title{
+      text-transform:uppercase;
+      color:#000;
+      margin:14px 0 12px;
+      padding-bottom:6px;
+      border-bottom:1px solid var(--rule);
+      padding-top: 6px;
+      border-top: 1px solid var(--rule);
+    }
+    .ref-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .ref-card{
+      background:#f0f0f0;
+      border:1px solid #e4e4e4;
+      border-radius:2px;
+      padding:20px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+    }
+
+    .ref-icon{
+      width:64px; height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:10px;
+      opacity:.65;
+    }
+
+    .ref-name{ font-weight:600; font-size:16px; margin:0 0 4px; }
+    .ref-role, .ref-company{ font-size:14px; margin:0; }
+    .ref-company{ margin-bottom:10px; }
+    .ref-email{ font-size:14px; color:var(--muted); margin:0; }
+    .ref-email .label{ letter-spacing:.12em; margin-right:6px; }
+    @media (max-width:900px){
+      .ref-grid{ grid-template-columns: 1fr; }
+    }
+    @media print{
+      .page{ max-width:none; margin:0; padding:0 24pt; }
+      .columns{
+        column-gap: 18pt;
+        grid-template-columns: min-content 1fr;
+      }
+      /* treat the entire section as keep-together */
+      .references{
+        break-inside: avoid;
+        page-break-inside: avoid;     /* legacy alias */
+        break-before: avoid-page;     /* try not to start/end mid-page */
+        break-after: avoid-page;
+      }
+
+      /* also keep each card intact */
+      .references .ref-grid,
+      .references .ref-card{
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .edu-item strong { font-weight: 400;}
+      .edu-item li { font-size: 8px; }
+      .sec-title { font-weight: 600; font-size: 10px; letter-spacing: .1em; }
+      .chiplist li{ font-size: 8px;}
+      .company{ font-weight:500; font-size:12px; }
+      .daterange{ font-size:10px; }
+      .role-title{ font-weight:400; font-size:10px; margin: 6px 0 2px; }
+      .bullets li {
+        font-size: 8px;
+      }
+    }
