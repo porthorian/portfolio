@@ -219,4 +219,9 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+
+      article.job {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
     }
